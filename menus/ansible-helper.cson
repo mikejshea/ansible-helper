@@ -1,0 +1,45 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Ansible'
+      'submenu': [
+        {
+          'label': 'Copy Module'
+          'command': 'ansible-helper:insert_copy_module'
+        }
+        {
+          'label': 'Template Module'
+          'command': 'ansible-helper:insert_template_module'
+        }
+        {
+          'label': 'Yum Module'
+          'command': 'ansible-helper:insert_yum_module'
+        }
+      ]
+    }
+  ]
+  '.tree-view .full-menu .header': [
+    {
+      'label': 'Ansible Add Role'
+      'command': 'ansible-helper:add_role'
+    },
+    {
+      'label': 'Ansible Test Dialog'
+      'command': 'ansible-helper:test_dialog'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'ansible-helper'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'ansible-helper:toggle'
+        }
+      ]
+    ]
+  }
+]

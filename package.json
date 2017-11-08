@@ -1,0 +1,23 @@
+{
+  "name": "ansible-helper",
+  "main": "./lib/ansible-helper",
+  "version": "0.0.1",
+  "description": "Package to help with general Ansible script development",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": ["ansible-helper:toggle"],
+    "atom-text-editor": [
+      "ansible-helper:insert_copy_module",
+      "ansible-helper:insert_template_module",
+      "ansible-helper:insert_yum_module"],
+    ".tree-view .full-menu .header": ["ansible-helper:add_role"]
+  },
+  "repository": "https://github.com/atom/ansible-helper",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
