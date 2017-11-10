@@ -3,7 +3,7 @@ path = require 'path'
 
 module.exports =
 class Dialog
-  constructor: ({newRole, select, iconClass, prompt} = {}) ->
+  constructor: ({defaultText, select, iconClass, prompt} = {}) ->
     @emitter = new Emitter()
     @disposables = new CompositeDisposable()
 
@@ -21,7 +21,7 @@ class Dialog
       @close() if document.hasFocus()
     @miniEditor.element.addEventListener('blur', blurHandler)
     @disposables.add(new Disposable(=> @miniEditor.element.removeEventListener('blur', blurHandler)))
-    # @disposables.add(@miniEditor.onDidChange => @showError())
+    @disposables.add(@miniEditor.onDidChange => @showError())
     @element.appendChild(@miniEditor.element)
 
     @errorMessage = document.createElement('div')
@@ -32,16 +32,10 @@ class Dialog
       'core:confirm': => @onConfirm(@miniEditor.getText())
       'core:cancel': => @cancel()
 
-    @miniEditor.setText(newRole)
+    @miniEditor.setText(defaultText)
 
     if select
-      # extension = path.extname(newRole)
-      # baseName = path.basename(newRole)
-      # selectionStart = newRole.length
-      # if baseName is extension
-      selectionEnd = newRole.length
-      # else
-      #   selectionEnd = newRole.length - extension.length
+      selectionEnd = defaultText.length
       @miniEditor.setSelectedBufferRange(Range(Point(0, 0), Point(0, selectionEnd)))
 
   attach: ->

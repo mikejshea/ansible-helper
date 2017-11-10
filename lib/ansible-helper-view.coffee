@@ -1,13 +1,13 @@
 module.exports =
 class AnsibleHelperView
-  constructor: (serializedState) ->
+  constructor: (serializedState, displayText) ->
     # Create root element
     @element = document.createElement('div')
     @element.classList.add('ansible-helper')
 
     # Create message element
     message = document.createElement('div')
-    message.textContent = "The AnsibleHelper package is Alive! It's ALIVE!"
+    message.textContent = displayText
     message.classList.add('message')
     @element.appendChild(message)
 

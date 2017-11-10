@@ -7,10 +7,6 @@
   ],
   "activationCommands": {
     "atom-workspace": ["ansible-helper:toggle"],
-    "atom-text-editor": [
-      "ansible-helper:insert_copy_module",
-      "ansible-helper:insert_template_module",
-      "ansible-helper:insert_yum_module"],
     ".tree-view .full-menu .header": ["ansible-helper:add_role"]
   },
   "repository": "https://github.com/atom/ansible-helper",

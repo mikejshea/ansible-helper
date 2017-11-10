@@ -1,0 +1,37 @@
+[
+  {
+    "menu": "Ansible:Files",
+    "name": "copy",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/copy_module.html\n  copy:\n    src: /srv/myfiles/foo.conf\n    dest: /etc/foo.conf\n    owner: foo\n    group: foo\n    mode: 0644\n"
+  },
+  {
+    "menu": "Ansible:Files",
+    "name":"syncronize",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/synchronize_module.html\n  synchronize:\n    mode: pull    src: rsync://somehost.com/path/\n    dest: /some/absolute/path/\n"
+  },
+  {
+    "menu": "Ansible:Files",
+    "name":"template",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/template_module.html\n  template:\n    src: /mytemplates/foo.j2\n    dest: /etc/file.conf\n    owner: bin\n    group: wheel\n    mode: 0644\n"
+  },
+  {
+    "menu": "Ansible:Files",
+    "name":"unarchive",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/unarchive_module.html\n  unarchive:\n    src: foo.tgz\n    dest: /usr/local/bin\n    remote_src: yes\n"
+  },
+  {
+    "menu": "Ansible:Packaging",
+    "name":"npm",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/npm_module.html\n  npm:\n    name: coffee-script\n    version: '1.6.1'\n    state: absent\n    global: yes\n    path: /app/location\n"
+  },
+  {
+    "menu": "Ansible:Packaging",
+    "name":"pip",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/pip_module.html\n  pip:\n    name: bottle\n    version: 0.11\n"
+  },
+  {
+    "menu": "Ansible:Packaging",
+    "name":"yum",
+    "text": "\n- name: http://docs.ansible.com/ansible/latest/yum_module.html\n  yum:\n    name: '*'\n    state: latest\n"
+  }
+]
